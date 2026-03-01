@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Pages Test</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 2.5rem 3rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      color: #8b949e;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .meta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+
+    .meta-item span {
+      color: #e6edf3;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #484f58;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Live</div>
+    <h1>GitHub Pages Test</h1>
+    <p>If you can read this, your GitHub Pages deployment is working correctly. This page was served straight from your repository.</p>
+    <div class="meta">
+      <div class="meta-item">Status <span>OK</span></div>
+      <div class="meta-item">Host <span>GitHub Pages</span></div>
+      <div class="meta-item" id="time-box">Time <span id="ts">—</span></div>
+    </div>
+  </div>
+  <footer>github_pages_test &mdash; index.html</footer>
+
+  <script>
+    const el = document.getElementById('ts');
+    const fmt = new Intl.DateTimeFormat([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    setInterval(() => { el.textContent = fmt.format(new Date()); }, 1000);
+    el.textContent = fmt.format(new Date());
+  </script>
+</body>
+</html>
